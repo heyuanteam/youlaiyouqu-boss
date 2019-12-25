@@ -9,12 +9,12 @@
         <version>1.5.13.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.yuyue</groupId>
+    <groupId>com.youlaiyouqu</groupId>
     <artifactId>boss</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <!-- 这里打成war包 若打jar，需将war改为jar -->
     <packaging>war</packaging>
-    <name>yuyue-boss</name>
+    <name>youlaiyouqu-boss</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -358,7 +358,7 @@
 
     <!-- 打包文件名 -->
     <build>
-        <finalName>yuyue-boss</finalName>
+        <finalName>youlaiyouqu-boss</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
