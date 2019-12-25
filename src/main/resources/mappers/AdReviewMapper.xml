@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.AdReviewMapper" >
-    <resultMap type="com.yuyue.boss.api.domain.Advertisement" id="myAdvertisement">
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.AdReviewMapper" >
+    <resultMap type="com.youlaiyouqu.boss.api.domain.Advertisement" id="myAdvertisement">
         <id column="id" property="id"/>
         <result column="userId" property="userId"/>
         <result column="merchantAddr" property="merchantAddr"/>
@@ -20,7 +20,7 @@
         <result column="telephone" property="telephone"/>
         <result column="APPLICATION_TIME" property="applicationTime"/>
         <result column="status" property="status"/>
-        <association property="appUser" javaType="com.yuyue.boss.api.domain.AppUser">
+        <association property="appUser" javaType="com.youlaiyouqu.boss.api.domain.AppUser">
             <!-- 关联条件Employee的dept_id对应着Department的id -->
             <id column="merchantId" property="id"/>
             <result column="USER_NICK_NAME" property="nickName"/>
@@ -28,7 +28,7 @@
             <result column="HEADP_URL" property="headpUrl"/>
         </association>
     </resultMap>
-    <select id="getAdReview" resultType="com.yuyue.boss.api.domain.Advertisement" parameterType="String">
+    <select id="getAdReview" resultType="com.youlaiyouqu.boss.api.domain.Advertisement" parameterType="String">
         select
         DATE_FORMAT(a.APPLICATION_TIME,'%Y-%m-%d %H:%i:%s') APPLICATION_TIME,
         a.id,a.userId,a.merchantAddr,a.businessLicense,a.idCardZM,a.idCardFM,a.agencyCode,

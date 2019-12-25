@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.YuYueSiteMapper">
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.YuYueSiteMapper">
 
-    <resultMap type="com.yuyue.boss.api.domain.YuYueSite" id="myYuYueSite">
+    <resultMap type="com.youlaiyouqu.boss.api.domain.YuYueSite" id="myYuYueSite">
         <id column="sid" property="id"/>
         <result column="title" property="title"/>
         <result column="imageUrl" property="imageUrl"/>
@@ -16,7 +16,7 @@
         <result column="jPushStatus" property="jPushStatus"/>
         <result column="qrCodePath" property="qrCodePath"/>
         <result column="status" property="status"/>
-        <collection property="siteShow" ofType="com.yuyue.boss.api.domain.SiteShow">
+        <collection property="siteShow" ofType="com.youlaiyouqu.boss.api.domain.SiteShow">
             <!-- 关联条件Employee的dept_id对应着Department的id -->
             <id column="showsId" property="id"/>
             <result column="showName" property="showName"/>
@@ -85,7 +85,7 @@
 
     </select>
 
-    <insert id="insertYuYueSite" parameterType = "com.yuyue.boss.api.domain.YuYueSite">
+    <insert id="insertYuYueSite" parameterType = "com.youlaiyouqu.boss.api.domain.YuYueSite">
         INSERT INTO
         yuyue_site (id,title,imageUrl,siteAddr,mainPerson,personTotal,qrCodePath,ADMISSION_TIME,START_TIME,END_TIME,status,jPushStatus)
         VALUES
@@ -98,7 +98,7 @@
         DELETE FROM yuyue_site where id = #{id}
     </delete>
 
-    <update id="updateYuYueSite"  parameterType="com.yuyue.boss.api.domain.YuYueSite">
+    <update id="updateYuYueSite"  parameterType="com.youlaiyouqu.boss.api.domain.YuYueSite">
         UPDATE yuyue_site
         <set>
 

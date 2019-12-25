@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.LoginMapper" >
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.LoginMapper" >
 
     <!--b.id = 'F9946CAE0D574FB1BDFDAE922F7821E9'-->
     <!-- 获取系统用户权限和个人信息 -->
-    <select id="getAppUserMsg" resultType="com.yuyue.boss.api.domain.SystemUserVO" parameterType="String">
+    <select id="getAppUserMsg" resultType="com.youlaiyouqu.boss.api.domain.SystemUserVO" parameterType="String">
         SELECT b.id systemUserId,b.loginName,b.systemName,b.phone,b.`status` systemUserStatus,
             c.id systemPermissionId,c.`status` systemPermissionStatus,c.menuKey,c.saveKey,c.removeKey,
             DATE_FORMAT(c.CREATE_TIME ,'%Y-%m-%d %H:%i:%s') createTime,DATE_FORMAT(c.UPDATE_TIME ,'%Y-%m-%d %H:%i:%s') updateTime,
@@ -18,7 +18,7 @@
     </select>
 
     <!-- 获取个人信息 -->
-    <select id="getSystemUserMsg" resultType="com.yuyue.boss.api.domain.SystemUser" parameterType="String">
+    <select id="getSystemUserMsg" resultType="com.youlaiyouqu.boss.api.domain.SystemUser" parameterType="String">
         SELECT b.*,
                DATE_FORMAT(b.UPDATE_TIME ,'%Y-%m-%d %H:%i:%s') updateTime,
                DATE_FORMAT(b.CREATE_TIME ,'%Y-%m-%d %H:%i:%s') createTime
@@ -30,7 +30,7 @@
     </select>
 
     <!--获取权限关联菜单列表-->
-    <select id="getMenuList" resultType="com.yuyue.boss.api.domain.SystemMenuVo" parameterType="String">
+    <select id="getMenuList" resultType="com.youlaiyouqu.boss.api.domain.SystemMenuVo" parameterType="String">
         SELECT d.menuName,d.id,d.menuAction,d.sort,c.menuKey
         FROM yuyue_system_user b,yuyue_system_permission c,yuyue_system_menu d
         WHERE b.id = c.systemUserId AND b.`status` = '10B' AND d.id = c.menuId AND d.`status` = '10B'
@@ -40,7 +40,7 @@
     </select>
 
     <!--获取菜单-->
-    <select id="getMenu" resultType="com.yuyue.boss.api.domain.SystemMenu" parameterType="String">
+    <select id="getMenu" resultType="com.youlaiyouqu.boss.api.domain.SystemMenu" parameterType="String">
         SELECT *,DATE_FORMAT(d.CREATE_TIME ,'%Y-%m-%d %H:%i:%s') createTime
         ,DATE_FORMAT(d.UPDATE_TIME ,'%Y-%m-%d %H:%i:%s') updateTime
         FROM yuyue_system_menu d
@@ -77,7 +77,7 @@
     </update>
 
     <!--获取权限-->
-    <select id="getSystemPermission" resultType="com.yuyue.boss.api.domain.SystemPermission" parameterType="String">
+    <select id="getSystemPermission" resultType="com.youlaiyouqu.boss.api.domain.SystemPermission" parameterType="String">
         SELECT *,DATE_FORMAT(d.CREATE_TIME ,'%Y-%m-%d %H:%i:%s') createTime
         ,DATE_FORMAT(d.UPDATE_TIME ,'%Y-%m-%d %H:%i:%s') updateTime
         FROM yuyue_system_permission d
@@ -89,7 +89,7 @@
     </select>
 
     <!-- 获取系统用户 -->
-    <select id="getSystemUser" resultType="com.yuyue.boss.api.domain.SystemUser" parameterType="String">
+    <select id="getSystemUser" resultType="com.youlaiyouqu.boss.api.domain.SystemUser" parameterType="String">
         SELECT b.*,
         DATE_FORMAT(b.UPDATE_TIME ,'%Y-%m-%d %H:%i:%s') updateTime,
         DATE_FORMAT(b.CREATE_TIME ,'%Y-%m-%d %H:%i:%s') createTime

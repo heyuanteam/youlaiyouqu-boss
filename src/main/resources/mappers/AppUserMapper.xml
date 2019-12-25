@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.AppUserMapper" >
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.AppUserMapper" >
     <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
-    <resultMap id="AppUser" type="com.yuyue.boss.api.domain.AppUser">
+    <resultMap id="AppUser" type="com.youlaiyouqu.boss.api.domain.AppUser">
         <id column="ID" property="id" jdbcType="VARCHAR"/>
         <result column="USER_NO" property="userNo" jdbcType="VARCHAR"/>
         <result column="USER_NICK_NAME" property="nickName" jdbcType="VARCHAR"/>
@@ -43,7 +43,7 @@
         <result column="zfbRealName" property="zfbRealName" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <update id="updateAppUser" parameterType="com.yuyue.boss.api.domain.AppUser">
+    <update id="updateAppUser" parameterType="com.youlaiyouqu.boss.api.domain.AppUser">
         UPDATE yuyue_merchant b
         <set>
             <if test="nickName!=null and nickName!=''">
@@ -130,7 +130,7 @@
 
     </update>
 
-    <select id="getAppUserMsg" resultType="com.yuyue.boss.api.domain.AppUser"  parameterType="String">
+    <select id="getAppUserMsg" resultType="com.youlaiyouqu.boss.api.domain.AppUser" parameterType="String">
         SELECT id,user_no userNo,user_nick_name nickName,user_real_name realName,id_type idType,id_card idCard,phone,sex,city,jpushName,password,salt,
             user_status userStatus,total ,income,ADDR_DETAIL addrDetail,HEADP_URL headpUrl,USER_TYPE userType,cardFUrl,cardZUrl,userUrl,fatherPhone,
         ATTENTION_TOTAL attentionTotal,LIKE_TOTAL likeTotal,COMMENT_TOTAL commentTotal,education ,wechat ,signature,opendId,wechatName,extensionStatus,
@@ -149,7 +149,7 @@
 
     </select>
 
-    <select id="getAppUserMsgList" resultType="com.yuyue.boss.api.domain.AppUser" parameterType="com.yuyue.boss.api.domain.AppUser">
+    <select id="getAppUserMsgList" resultType="com.youlaiyouqu.boss.api.domain.AppUser" parameterType="com.youlaiyouqu.boss.api.domain.AppUser">
         SELECT id,user_no userNo,user_nick_name nickName,user_real_name realName,id_type idType,id_card idCard,phone,sex,city,jpushName,password,salt,
         user_status userStatus,total ,income,ADDR_DETAIL addrDetail,HEADP_URL headpUrl,USER_TYPE userType,cardFUrl,cardZUrl,userUrl,fatherPhone,
         ATTENTION_TOTAL attentionTotal,LIKE_TOTAL likeTotal,COMMENT_TOTAL commentTotal,education ,wechat ,signature,opendId,wechatName,extensionStatus,

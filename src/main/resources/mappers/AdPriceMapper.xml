@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.AdPriceMapper">
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.AdPriceMapper">
 
     <!-- 查询单条记录 -->
-    <select id="getAdvertisementFeeInfo"  parameterType="String" resultType="com.yuyue.boss.api.domain.AdPrice">
+    <select id="getAdvertisementFeeInfo"  parameterType="String" resultType="com.youlaiyouqu.boss.api.domain.AdPrice">
         SELECT ID priceId,
         AD_DURATION adDuration,
         AD_TOTAL_PRICE adTotalPrice,
@@ -17,7 +17,7 @@
         ORDER BY AD_DURATION
     </select>
 
-    <select id="getAdFee"  parameterType="String" resultType="com.yuyue.boss.api.domain.AdPrice">
+    <select id="getAdFee"  parameterType="String" resultType="com.youlaiyouqu.boss.api.domain.AdPrice">
         SELECT ID priceId,
         AD_DURATION adDuration,
         AD_TOTAL_PRICE adTotalPrice,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.MallShopMapper">
-    <resultMap type="com.yuyue.boss.api.domain.MallShop" id="MallShop">
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.MallShopMapper">
+    <resultMap type="com.youlaiyouqu.boss.api.domain.MallShop" id="MallShop">
         <id column="shop_id" property="shopId"/>
         <result column="merchant_id" property="merchantId"/>
         <result column="category" property="category"/>
@@ -30,7 +30,7 @@
         <result column="gdLon" property="gdLon"/>
         <result column="gdLat" property="gdLat"/>
         <result column="distance_id" property="distanceId"/>
-        <collection property="images" ofType="com.yuyue.boss.api.domain.ShopImage" >
+        <collection property="images" ofType="com.youlaiyouqu.boss.api.domain.ShopImage" >
             <id column="image_id" property="imageId"/>
             <result column="image_path" property="imagePath"/>
             <result column="image_sort" property="imageSort"/>
@@ -78,7 +78,7 @@
     </select>
 
 
-    <update id="updateMyMallShopInfo" parameterType="com.yuyue.boss.api.domain.MallShop">
+    <update id="updateMyMallShopInfo" parameterType="com.youlaiyouqu.boss.api.domain.MallShop">
         update  yuyue_mall_shop
         <set>
 

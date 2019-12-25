@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.OutMoneyMapper" >
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.OutMoneyMapper" >
 
     <!-- 获取提现记录 -->
-    <select id="getOutMoneyList" resultType="com.yuyue.boss.api.domain.OutMoney" parameterType="String">
+    <select id="getOutMoneyList" resultType="com.youlaiyouqu.boss.api.domain.OutMoney" parameterType="String">
         SELECT b.*,c.USER_REAL_NAME userName,
                 DATE_FORMAT(b.CREATE_TIME, '%Y-%m-%d %H:%i:%s') createTime,
                 DATE_FORMAT(b.COMPLETE_TIME, '%Y-%m-%d %H:%i:%s') completeTime

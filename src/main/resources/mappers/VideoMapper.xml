@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.VideoMapper" >
-    <resultMap type="com.yuyue.boss.api.domain.UploadFile" id="myUploadFile">
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.VideoMapper" >
+    <resultMap type="com.youlaiyouqu.boss.api.domain.UploadFile" id="myUploadFile">
         <id column="id" property="id"/>
         <result column="authorId" property="authorId"/>
         <result column="UPLOAD_TIME" property="uploadTime"/>
@@ -21,7 +21,7 @@
         <result column="categoryId" property="categoryId"/>
         <result column="status" property="status"/>
         <result column="report_status" property="reportStatus"/>
-        <association property="appUser" javaType="com.yuyue.boss.api.domain.AppUser">
+        <association property="appUser" javaType="com.youlaiyouqu.boss.api.domain.AppUser">
             <!-- 关联条件Employee的dept_id对应着Department的id -->
             <id column="userId" property="id"/>
             <result column="USER_NICK_NAME" property="nickName"/>
@@ -151,7 +151,7 @@
 
     </select>
 
-    <insert id="insertVideo" parameterType="com.yuyue.boss.api.domain.UploadFile">
+    <insert id="insertVideo" parameterType="com.youlaiyouqu.boss.api.domain.UploadFile">
         INSERT INTO ${tableName}
             (id,authorId,categoryId,title,filesName,filesPath,description,videoAddress,filesType,status)
         value

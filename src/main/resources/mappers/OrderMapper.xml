@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.OrderMapper" >
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.OrderMapper" >
 
-    <select id="getOrderList" resultType="com.yuyue.boss.api.domain.Order" parameterType="String">
+    <select id="getOrderList" resultType="com.youlaiyouqu.boss.api.domain.Order" parameterType="String">
         select
         DATE_FORMAT(o.CREATE_TIME,'%Y-%m-%d %H:%i:%s') createTime,
         DATE_FORMAT(o.COMPLETE_TIME,'%Y-%m-%d %H:%i:%s') completeTime,
@@ -47,7 +47,7 @@
     </delete>
 
 
-    <update id="updateOrder"  parameterType="com.yuyue.boss.api.domain.Order">
+    <update id="updateOrder"  parameterType="com.youlaiyouqu.boss.api.domain.Order">
         UPDATE yuyue_order
         <set>
             <if test="tradeType != null and tradeType != ''">

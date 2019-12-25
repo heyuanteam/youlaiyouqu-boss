@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.SendMapper" >
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.SendMapper" >
 
     <!--获取公告列表-->
-    <select id="getJPushList" resultType="com.yuyue.boss.api.domain.JPush" parameterType="String">
+    <select id="getJPushList" resultType="com.youlaiyouqu.boss.api.domain.JPush" parameterType="String">
         SELECT d.*,DATE_FORMAT(d.CREATE_TIME ,'%Y-%m-%d %H:%i:%s') createTime
         FROM yuyue_jpush d
         WHERE 1=1
@@ -24,7 +24,7 @@
     </select>
 
     <!--获取库存不足的商品-->
-    <select id="findShopId"  parameterType="String" resultType="com.yuyue.boss.api.domain.MallShop">
+    <select id="findShopId"  parameterType="String" resultType="com.youlaiyouqu.boss.api.domain.MallShop">
         SELECT s.commodity_name commodityName,s.merchant_id merchantId FROM yuyue_mall_shop s,yuyue_mall_shop_commodity b
         where 1=1
         <if test="shopid != null and shopid != ''">
@@ -40,7 +40,7 @@
     </select>
 
     <!--获取商家信息-->
-    <select id="findOrderItemId"  parameterType="String" resultType="com.yuyue.boss.api.domain.OrderItem">
+    <select id="findOrderItemId"  parameterType="String" resultType="com.youlaiyouqu.boss.api.domain.OrderItem">
         SELECT s.merchant_id consumerId FROM yuyue_mall_order_item s left join yuyue_order b on s.order_id = b.id
         where b.status ='10B'
         <if test="orderId != null and orderId != ''">

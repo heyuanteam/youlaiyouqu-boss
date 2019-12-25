@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yuyue.boss.api.mapper.YuYueSiteShowMapper" >
-    <resultMap type="com.yuyue.boss.api.domain.YuYueSite" id="SiteShow">
+<mapper namespace="com.youlaiyouqu.boss.api.mapper.YuYueSiteShowMapper" >
+    <resultMap type="com.youlaiyouqu.boss.api.domain.YuYueSite" id="SiteShow">
         <id column="id" property="id"/>
         <result column="showName" property="showName"/>
         <result column="category" property="category"/>
@@ -23,7 +23,7 @@
 
     </select>
 
-    <insert id="insertSiteShow" parameterType="com.yuyue.boss.api.mapper.YuYueSiteShowMapper">
+    <insert id="insertSiteShow" parameterType="com.youlaiyouqu.boss.api.mapper.YuYueSiteShowMapper">
          INSERT INTO
              yuyue_site_show
             (id,showName,category,showPersons,SHOW_TIME,siteId)
@@ -32,7 +32,7 @@
     </insert>
 
 
-    <update id="updateSiteShow"  parameterType="com.yuyue.boss.api.mapper.YuYueSiteShowMapper">
+    <update id="updateSiteShow"  parameterType="com.youlaiyouqu.boss.api.mapper.YuYueSiteShowMapper">
         UPDATE
             yuyue_site_show
         <set>
